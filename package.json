@@ -1,0 +1,28 @@
+{
+  "name": "react-universal-renderer",
+  "version": "1.0.0",
+  "description": "renders react component and returs html",
+  "scripts": {
+    "lint": "eslint lib",
+    "test": "mocha"
+  },
+  "main": "index.js",
+  "author": "Haithem Bel Haj <haithem@konek.to>",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "bluebird": "^3.5.0",
+    "debug": "^2.6.3",
+    "dependency-tree": "^5.9.0",
+    "eslint-plugin-react": "^6.10.3",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "mocha": "^3.2.0"
+  }
+}
