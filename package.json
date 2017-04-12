@@ -1,7 +1,7 @@
 {
-  "name": "react-universal-renderer",
-  "version": "1.0.0",
-  "description": "renders react component and returs html",
+  "name": "react-render-html",
+  "version": "0.1.0",
+  "description": "renders react components given data to html",
   "scripts": {
     "lint": "eslint lib",
     "test": "mocha"
@@ -9,6 +9,7 @@
   "main": "index.js",
   "author": "Haithem Bel Haj <haithem@konek.to>",
   "license": "ISC",
+  "bin" : { "react-render-html" : "./bin/index.js" },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
@@ -18,6 +19,7 @@
     "debug": "^2.6.3",
     "dependency-tree": "^5.9.0",
     "eslint-plugin-react": "^6.10.3",
+    "meow": "^3.7.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
