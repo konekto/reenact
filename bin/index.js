@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-const renderer = require('../lib/renderer');
 const meow = require('meow');
 const path = require('path');
+
 
 // called directly
 if (require.main === module) {
@@ -14,7 +14,10 @@ if (require.main === module) {
 	  $ react-render-html -f <file> -d <data>
 
 	Options
-	  --dev  development mode
+	  --file file of the component 
+	  --data data to pass to the component
+	  --server starts the server
+
 
 	Examples
 	  $ react-render-html -f components/timer.js -d '{"value" : 12213213}'
@@ -25,6 +28,13 @@ if (require.main === module) {
     }
   });
 
+  // start the server
+  if(cli.flags.server) {
+
+    return require('../lib/net/server')();
+  }
+
+
   const options = {
 
     file: path.resolve(process.cwd(), cli.flags.file),
@@ -32,13 +42,15 @@ if (require.main === module) {
     isDev: cli.flags.dev
   };
 
-  renderer(options).then((html) => {
+ require('../lib/net/client')(options, (html) => {
+
+    console.log('response received');
 
     process.stdout.write(html);
     process.exit();
-  })
+  });
 }
 
-
-
-module.exports = renderer;
+//
+//
+// module.exports = renderer;

@@ -6,9 +6,8 @@
     "lint": "eslint lib",
     "test": "mocha",
     "bin": "enclose -o react-render-html ./bin/index.js",
-    "build": "pkg . --out-dir build"
+    "build": "pkg ."
   },
-  "pkg": {},
   "main": "index.js",
   "author": "Haithem Bel Haj <haithem@konek.to>",
   "license": "ISC",
