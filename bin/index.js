@@ -34,7 +34,6 @@ if (require.main === module) {
     return require('../lib/net/server')();
   }
 
-
   const options = {
 
     file: path.resolve(process.cwd(), cli.flags.file),
@@ -42,13 +41,10 @@ if (require.main === module) {
     isDev: cli.flags.dev
   };
 
- require('../lib/net/client')(options, (html) => {
+  const client = require('../lib/net/client')(options)
 
-    console.log('response received');
-
-    process.stdout.write(html);
-    process.exit();
-  });
+  client.pipe(process.stdout);
+  client.on('data', ()=> process.exit())
 }
 
 //
