@@ -9,10 +9,10 @@ To start the server just do:
 ```bash
 react-render-html --server
 ```
-This will start a tcp server on `localhost` listening to `5004`.
-This server will be waiting on incoming tcp data in the form `{file: FILE, data: DATA}`. 
+This will start a tcp server on `localhost` listening to `5004`.  
+This server will be waiting on incoming tcp data in the form `{file: FILE, data: DATA}`.  
 The file props should be absolute or relative to the directory of the server.  
-The file will be required (and accordingly any subsequent require will be also called) and the default component will be passed the data.
+The file will be required (and accordingly any subsequent require will be also called) and the default component will be passed the data.  
 The resulting HTML will be written to the same socket that sent the data.
 
 ### client
@@ -21,8 +21,8 @@ To do so just:
 ```bash
 react-render-html --file components/timer.js --data '{"value" : 12213213}'
 ```
-The argument will be transmitted to the server and the resulting HTML written to stdout.
-Surely You can do this with your own tcp client in any language.
+The argument will be transmitted to the server and the resulting HTML written to stdout.  
+Surely You can do this with your own tcp client in any language.  
 Just send the parameters `{file: FILE, data: DATA}`  as stringified JSON to the tcp address `127.0.0.1` on port `5004` and you will receive the HTML back.  
 An example of PHP client could be:
 ```php
