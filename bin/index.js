@@ -18,7 +18,8 @@ function init_cli() {
 
 		Options
 			--file file of the component
-			--data data to pass to the component
+			--props props to pass to the component
+			--context context object to pass to the component
 			--port port to connect to
 			--address address to connect to
 			--server starts the server
@@ -27,12 +28,13 @@ function init_cli() {
 
 		Examples
 			$ react-render-html --server
-			$ react-render-html -f components/timer.js -d '{"value" : 12213213}'
+			$ react-render-html --file components/timer.js --props '{"value" : 12213213}'
 	`,
     {
       alias: {
         f: "file",
-        d: "data",
+				ps: "props",
+				c: "context",
         p: "port",
         a: "address"
       }
@@ -48,7 +50,7 @@ function init_cli() {
 
   const options = Object.assign({}, flags, {
     file: path.resolve(process.cwd(), flags.file),
-    props: JSON.parse(flags.data),
+    props: JSON.parse(flags.props),
     isDev: flags.dev,
   });
 
@@ -61,7 +63,7 @@ function init_cli() {
 
       successStream.pipe(process.stdout);
     }
-  );
+	);
 
   client.on("end", () => process.exit());
 }
