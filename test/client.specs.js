@@ -4,7 +4,11 @@ const server = require("../lib/net/server");
 const client = require("../lib/net/client");
 
 describe("Client Specs", function() {
-  before(() => server());
+
+	let s;
+
+	before(() => s = server());
+	after(()=> s.close());
 
   it("should render component file", function(done) {
     client(

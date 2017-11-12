@@ -45,7 +45,10 @@ function init_cli() {
 
   // start the server
   if (flags.server) {
-    return require("../lib/net/server")();
+
+		const options =  Object.assign({}, flags, {isDev : flags.dev});
+
+    return require("../lib/net/server")(options);
 	}
 
   const options = Object.assign({}, flags, {
@@ -58,8 +61,9 @@ function init_cli() {
     options,
     (errStream, successStream) => {
       if (errStream) {
-        return errStream.pipe(process.stderr);
-      }
+
+				return errStream.pipe(process.stderr);
+			}
 
       successStream.pipe(process.stdout);
     }

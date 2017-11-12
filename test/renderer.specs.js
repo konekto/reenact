@@ -34,5 +34,5 @@ describe("Renderer Specs", function() {
       );
       done();
     });
-  });
+	});
 });
