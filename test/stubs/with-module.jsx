@@ -1,6 +1,6 @@
 
-import React from 'react'
-import Time from 'react-time'
+import React from 'react';
+import Time from 'react-time';
 
 export default (props)=> {
 

@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "moment": "^2.18.1",
-    "react-time": "^4.2.0"
+    "react-time": "^4.3.0"
   }
 }

@@ -24,8 +24,8 @@
     "dependency-tree": "^5.9.0",
     "eslint-plugin-react": "^6.10.3",
     "meow": "^3.7.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
   },
   "devDependencies": {
     "enclose": "^2.2.0",

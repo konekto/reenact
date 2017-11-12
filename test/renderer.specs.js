@@ -10,7 +10,7 @@ describe('Renderer Specs', function() {
     renderer({file: path.resolve(__dirname, 'stubs/component.jsx'), data: {text: 'test'}})
       .then((html) => {
 
-        assert.equal(html, '<div data-reactroot="" data-reactid="1" data-react-checksum="-1145761510">test</div>');
+        assert.equal(html, '<div data-reactroot="">test</div>');
         done();
       })
   });
@@ -20,7 +20,7 @@ describe('Renderer Specs', function() {
     renderer({file: path.resolve(__dirname, 'stubs/nested.jsx'), data: {text: 'test'}})
       .then((html) => {
 
-        assert.equal(html, '<div data-reactroot="" data-reactid="1" data-react-checksum="-1145761510">test</div>');
+        assert.equal(html, '<div data-reactroot="">test</div>');
         done();
       })
   });
@@ -30,7 +30,7 @@ describe('Renderer Specs', function() {
     renderer({file: path.resolve(__dirname, 'stubs/with-module.jsx'), data: {value: new Date(681436800000)}})
       .then((html) => {
 
-        assert.equal(html, '<time data-reactroot="" data-reactid="1" data-react-checksum="1536300351">1991-08-06T02:00:00+02:00</time>');
+        assert.equal(html, '<time data-reactroot="">1991-08-06T02:00:00+02:00</time>');
         done();
       })
   });
