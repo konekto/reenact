@@ -28,9 +28,8 @@
     "react-dom": "^16.1.0"
   },
   "devDependencies": {
-    "enclose": "^2.2.0",
     "eslint": "^3.19.0",
     "mocha": "^3.2.0",
-    "pkg": "^3.0.1"
+    "pkg": "^4.3.0-beta.1"
   }
 }
