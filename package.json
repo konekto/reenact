@@ -1,18 +1,18 @@
 {
-  "name": "react-render-html",
+  "name": "react-universal-renderer",
   "version": "0.1.0",
   "description": "renders react components given data to html",
   "scripts": {
     "lint": "eslint lib",
     "test": "mocha",
     "bin": "enclose -o react-render-html ./bin/index.js",
-    "build": "pkg ./bin/index.js --out-dir build"
+    "build": "pkg ./ --out-dir build"
   },
   "main": "index.js",
   "author": "Haithem Bel Haj <haithem@konek.to>",
   "license": "ISC",
   "bin": {
-    "react-render-html": "./bin/index.js"
+    "rur": "./bin/index.js"
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
