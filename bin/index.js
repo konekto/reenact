@@ -17,7 +17,7 @@ function init_cli() {
 			$ react-render-html -f <file> -d <data>
 
 		Options
-			--file file of the component
+			--path file of the component
 			--props props to pass to the component
 			--context context object to pass to the component
 			--port port to connect to
