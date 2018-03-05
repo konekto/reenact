@@ -39,7 +39,7 @@ describe("Client Specs", function() {
         errStream.on("data", buff => {
 					const resp = buff.toString("utf8");
 
-          assert.equal(resp.slice(0, 5), "Error");
+          assert(resp.indexOf('MODULE_NOT_FOUND') > 0);
           done();
         });
       }

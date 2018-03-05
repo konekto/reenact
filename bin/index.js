@@ -52,7 +52,7 @@ function init_cli() {
 	}
 
   const options = Object.assign({}, flags, {
-    file: path.resolve(process.cwd(), flags.file),
+    file: flags.file,
     props: JSON.parse(flags.props),
     isDev: flags.dev,
   });
