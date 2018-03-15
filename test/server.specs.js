@@ -12,7 +12,7 @@ describe("Server Specs", function() {
 
   it("should render component file", function(done) {
     const request = client({
-      file: path.resolve(__dirname, "stubs/component.jsx"),
+      file: path.resolve(__dirname, "stubs/nested.jsx"),
       props: { text: "test" }
     });
 
