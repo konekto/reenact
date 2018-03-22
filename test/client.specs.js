@@ -30,19 +30,38 @@ describe("Client Specs", function() {
   });
 
   it("should throw an error for file not found", function(done) {
-    client(
-      {
-        file: path.resolve(__dirname, "stubs/doesntexist.jsx"),
-        props: { text: "test" }
-      },
-      errStream => {
-        errStream.on("data", buff => {
+		client(
+			{
+				file: path.resolve(__dirname, "stubs/doesntexist.jsx"),
+				props: { text: "test" }
+			},
+			errStream => {
+				errStream.on("data", buff => {
 					const resp = buff.toString("utf8");
 
-          assert(resp.indexOf('MODULE_NOT_FOUND') > 0);
-          done();
-        });
-      }
-    );
+					assert(resp.indexOf('MODULE_NOT_FOUND') > 0);
+					done();
+				});
+			}
+		);
   });
+
+  it("should handle big messages", function(done) {
+
+		client(
+			{
+				file: path.resolve(__dirname, "stubs/doesntexist.jsx"),
+				props: require('./stubs/big.json')
+			},
+			errStream => {
+				errStream.on("data", buff => {
+
+					const resp = buff.toString("utf8");
+
+					assert(resp.indexOf('MODULE_NOT_FOUND') > 0);
+					done();
+				});
+			}
+		);
+	})
 });
