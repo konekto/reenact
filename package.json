@@ -11,6 +11,10 @@
   "main": "index.js",
   "author": "Haithem Bel Haj <haithem@konek.to>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:konekto/reenact.git"
+  },
   "bin": {
     "reenact": "./bin/index.js"
   },

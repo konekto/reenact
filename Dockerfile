@@ -11,4 +11,6 @@ WORKDIR /reenact
 
 RUN npm install
 
-CMD if $DEV; then ./bin/index.js --server --address $ADDRESS --port $PORT --dev; else ./bin/index.js --server --address $ADDRESS --port $PORT; fi
+WORKDIR /
+
+CMD if $DEV; then ./reenact/bin/index.js --server --address $ADDRESS --port $PORT --dev; else ./reenact/bin/index.js --server --address $ADDRESS --port $PORT; fi
