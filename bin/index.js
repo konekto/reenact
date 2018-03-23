@@ -2,7 +2,8 @@
 "use strict";
 
 const meow = require("meow");
-const path = require("path");
+
+let socket;
 
 // called directly
 if (require.main === module) {
@@ -10,6 +11,7 @@ if (require.main === module) {
 }
 
 function init_cli() {
+
   const cli = meow(
     `
 
@@ -48,7 +50,9 @@ function init_cli() {
 
 		const options =  Object.assign({}, flags, {isDev : flags.dev});
 
-    return require("../lib/net/server")(options);
+    socket = require("../lib/net/server")(options);
+
+    return;
 	}
 
   const options = Object.assign({}, flags, {
@@ -70,4 +74,12 @@ function init_cli() {
 	);
 
   client.on("end", () => process.exit());
+
+  socket = client;
 }
+
+process.on('SIGINT', () => {
+
+	socket.destroy ? socket.destroy() : socket.close();
+	process.exit();
+});

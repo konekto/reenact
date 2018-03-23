@@ -10,9 +10,7 @@ export default function App(props) {
 	)
 }
 
-
 function Content(props) {
-
 
 	return (
 
