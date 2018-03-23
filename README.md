@@ -18,7 +18,7 @@ The resulting HTML will be written to the same socket that sent the data.
 This server will respond with '1' as the first Byte if the rendering succeded other '0'.
 If you write your own client for this server please take this into consideration.
 
-see reenact --help for more options
+see `reenact --help` for more options
 
 ####  Caution
 All `node-modules` needed by the file you want to render should be available to the server.
