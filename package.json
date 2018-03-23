@@ -1,6 +1,6 @@
 {
-  "name": "react-universal-renderer",
-  "version": "0.1.0",
+  "name": "reenact",
+  "version": "1.0.0",
   "description": "renders react components given data to html",
   "scripts": {
     "lint": "eslint lib",
