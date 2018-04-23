@@ -14,12 +14,11 @@ function init_cli() {
 
   const cli = meow(
     `
-
 		Usage
-			$ react-render-html -f <file> -d <data>
+			$ reenact --file <file> --props <data>
 
 		Options
-			--path file of the component
+			--file file of the component
 			--props props to pass to the component
 			--context context object to pass to the component
 			--port port to connect to
@@ -27,10 +26,9 @@ function init_cli() {
 			--server starts the server
 			--dev recompiles the components on every request
 
-
 		Examples
-			$ react-render-html --server
-			$ react-render-html --file components/timer.js --props '{"value" : 12213213}'
+			$ reenact --server
+			$ reenact --file components/timer.js --props '{"value" : 12213213}'
 	`,
     {
       alias: {
