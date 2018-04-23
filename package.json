@@ -1,6 +1,6 @@
 {
   "name": "@konekto/reenact",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "renders react components given data to html",
   "homepage": "https://github.com/konekto/reenact",
   "scripts": {
