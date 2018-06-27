@@ -1,4 +1,4 @@
-FROM node:9
+FROM node:9-alpine
 
 ENV PORT 5004
 ENV ADDRESS 0.0.0.0
