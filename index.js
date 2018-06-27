@@ -1,3 +1,3 @@
-const renderer = require('lib/renderer');
+const renderer = require('./lib/renderer');
 
 module.exports = renderer;
